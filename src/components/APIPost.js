@@ -14,7 +14,7 @@ export default class APIPost extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:5000/movies/input', {
+        fetch('https://python-react-micro.herokuapp.com/movies_input', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
