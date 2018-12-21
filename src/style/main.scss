@@ -1,28 +1,37 @@
+@import 'game';
+
 html {
-    font-size: 62.5%; // 1rem is 10px
-}
-
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: 'montserrat';
-}
-
-body {
-    overflow-x: hidden;
-    font-weight: normal;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
+    font-size: 70%; // 1rem is 10px
 }
 
 .app {
-    margin-top: 2rem;
     display: grid;
+    grid-template-columns: 20% 80%;
     justify-items: center;
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        
+    }
+    .content {
+        width: 100%;
+        padding: 25px;
+        background-color: skyblue;
+        .movies-container {
+        display: grid;
+        grid-gap: 20px 40px;
+        grid-template-rows: repeat(1fr);
+        grid-template-columns: repeat(4, 1fr);
+        .movie {
+            background-color: gray;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            height: 100px;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.61);
+        }
+
+        }
+    }
 }

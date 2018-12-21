@@ -5,12 +5,12 @@ export default class APIFetch extends Component {
         super(props)
 
         this.state = {
-            movies: []
+            movies: [],
         }
     }
 
     componentWillMount(){
-        fetch('https://python-react-micro.herokuapp.com/return_movies', {
+        fetch('http://localhost:5000/return_movies', {
             method: "GET",
             headers: {
                 "accept": "application/json",
@@ -22,15 +22,16 @@ export default class APIFetch extends Component {
         .then(data => {this.setState({movies:data})})
         .catch(err => console.log("Fetch Error", err))
     }
+
+
   render() {
     return (
-      <div>
-            <h1>Current Movies</h1>
+      <div className='movies-container'>
         {this.state.movies.map((movie, index)=> {
             return (
-                <div key={index}>
+                <div className='movie' key={index}>
                     <p>Title: {movie[0]}</p>
-                    <p>Rating: {movie[1]}</p>
+                    <p>Year: {movie[1] == 0 ? 'Pending': movie[1]}</p>
                 </div>
             )
         })}

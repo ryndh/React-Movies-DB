@@ -6,23 +6,27 @@ export default class APIPost extends Component {
 
         this.state = {
             title: '',
-            rating: 0,
         }
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-        fetch('https://python-react-micro.herokuapp.com/movies_input', {
+    handleSubmit(e) {
+        e.preventDefault()
+        fetch('http://localhost:5000/movies_input', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify({title:this.state.title , rating:this.state.rating})
-        }).then(response => {response.json()})
+            body: JSON.stringify({title:this.state.title})
+        }).then(response => {
+            response.json(),
+            console.log(response)
+        })
         .then(responseData => {return responseData})
         .catch(err => console.log("Submit Error " + err))
+
+        e.target.title.value = null
     }
 
     handleChange(event) {
@@ -37,9 +41,7 @@ export default class APIPost extends Component {
             <label>Title:
                 <input type='text' value={this.state.title} onChange={this.handleChange} name='title'/>
             </label>
-            <label>Rating:
-                <input type='integer' value={this.state.rating} onChange={this.handleChange} name='rating'/>
-            </label>
+    
             <input type='submit' value='Submit Movie'/>
           </form>
       </div>

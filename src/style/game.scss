@@ -1,0 +1,17 @@
+.movies-game {
+    width: 100%;
+    display: grid;
+    grid-template-columns: [card-s] 2fr [card-e] 1fr [user-s] 1fr [user-e];
+    .cards-container {
+        grid-column: card-s/card-e;
+        display: flex;
+        flex-direction: column;
+    }
+    .user-list {
+        width: 100%;
+        border: 1px solid black;
+        grid-column: user-s/user-e;
+        display: flex;
+        flex-direction: column;
+    }
+}
