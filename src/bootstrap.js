@@ -20,13 +20,13 @@ function main() {
       <BrowserRouter>
         <div className='app' > 
         <div className='sidebar'>
-          <Link to='/movie_add'>Add Movie</Link>
-          <Link to='/'>HOME</Link>
-          <Link to='/all_movies'>Movies</Link>
-          <Link to='/remove'>Remove Movies</Link>
-          <Link to='/movie_game'>Movie Game!</Link>
+          <Link className='link' to='/'>HOME</Link>
+          <Link className='link' to='/movie_add'>Add Movie</Link>
+          <Link className='link' to='/all_movies'>Movie List</Link>
+          <Link className='link' to='/remove'>Delete Movies</Link>
+          <Link className='link' to='/movie_game'>Movie Game!</Link>
         </div>
-        <div className='content'>
+        <div className='content-wrapper'>
           <Route exact path='/' component={App}/>
           <Route path='/all_movies' component={APIFetch}/>
           <Route path='/movie_add' component={APIPost}/>

@@ -1,17 +1,133 @@
 .movies-game {
     width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: [card-s] 2fr [card-e] 1fr [user-s] 1fr [user-e];
+    align-items: baseline;
+    grid-template-columns: [card-s] 2fr [card-e user-s] 2fr [user-e];
+    grid-template-rows: [header-s] 10% [header-e game-s] 80% [game-e];
+    .results-modal-hidden {
+        display: none;
+    }
+    .results-modal-show {
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #3131317a;
+        z-index: 10;
+        .inner-modal {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            position: relative;
+            border-radius: 20px;
+            top: 25%;
+            left: 25%;
+            div {
+                font-size: 3rem;
+            }
+        }
+    }
+    .header {
+        grid-column: card-s/user-e;
+        grid-row: header-s/header-e;
+        text-align: center;
+        margin-bottom: 50px;
+    }
     .cards-container {
         grid-column: card-s/card-e;
+        grid-row: game-s/game-e;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        .movie {
+            border: 1px solid;
+            padding: 7px 10px;
+            width: 60%;
+            display: flex;
+            background-color: $sidebar-color;
+            color: $content-bg;
+            justify-content: center;
+            margin: 5px 0px;
+            border-radius: 10px;
+            position: relative;
+            p {
+                margin: 0;
+            }
+            .far {
+                position: absolute;
+                right: 0;
+                margin-right: 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .moved {
+            background-color: green;
+        }
     }
-    .user-list {
+    .user-list-container {
+        padding: 20px 0px;
         width: 100%;
-        border: 1px solid black;
+        height: 100%;
+        border: 5px solid $sidebar-color;
+        border-radius: 15px;
         grid-column: user-s/user-e;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-rows: [list-s] 90%[list-e button-s] 10% [button-e];
+        .user-list {
+            height: 100%;
+            width: 100%;
+            grid-row: list-s/list-e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .dropper {
+                font-size: 3rem;
+            }
+        }
+        .sorted {
+            border: 1px solid;
+            padding: 7px 10px;
+            width: 60%;
+            display: grid;
+            background-color: $sidebar-color;
+            color: $content-bg;
+            justify-content: center;
+            margin: 5px 0px;
+            border-radius: 10px;
+            position: relative;
+            p {
+                margin: 0;
+            }
+            .far {
+                position: absolute;
+                right: 0;
+                top: 25%;
+                margin-right: 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .buttons {
+            grid-row: button-s/button-e;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            button {
+                width: 30%;
+                border-radius: 10px;
+                border-style: none;
+                outline: none;
+                border: 2px solid $sidebar-color;
+                background-color: $content-bg;
+                color: $sidebar-color;
+            }
+        }
     }
 }

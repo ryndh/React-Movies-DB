@@ -8,6 +8,8 @@ export default class MovieSort extends Component {
             movies: [],
             userSort: [],
             userYears: [],
+            showYears: false,
+            showModal: false,
         }
     }
 
@@ -39,28 +41,28 @@ export default class MovieSort extends Component {
 
         let userMovie = this.state.movies.filter((movie) => movie[0] == id)
         let updatedList = [...this.state.userSort, ...userMovie]
-        let updatedYears = [...this.state.userYears, userMovie[0][1] ]
-        this.setState({ 
+        let updatedYears = [...this.state.userYears, userMovie[0][1]]
+        this.setState({
             userSort: updatedList,
             userYears: updatedYears,
         })
-        console.log(updatedYears)
+        console.log(updatedList)
 
     }
 
-    right = (e) => {
-        e.preventDefault()
-        alert('right')
-    }
-    wrong = (e) => {
-        e.preventDefault()
-        alert('wrong')
-    }
     reset = () => {
         this.setState({
             userSort: [],
             userYears: [],
+            showYears: false,
         })
+    }
+    show = () => {
+        this.setState({ showYears: !this.state.showYears })
+    }
+    remover = movie => {
+        let newUserSort = this.state.userSort.filter((film) => film != movie)
+        this.setState({userSort: newUserSort})
     }
 
     render() {
@@ -74,25 +76,57 @@ export default class MovieSort extends Component {
 
         return (
             <div className='movies-game'>
+                <div className={this.state.showModal ? 'results-modal-show' : 'results-modal-hidden'}>
+                    <div className='inner-modal'>
+                        <div>{years.join() == userYears.join() ? "Correct!" : "Not Quite, Try Again!"}</div>
+                        <button type='button' onClick={() => this.setState({showModal: false})} >Close</button>
+                    </div>
+                </div>
+                <div className='header'>
+                    <h3>How well do you know your movies? <br /> Drag from the left column to the right to sort by release date, then hit submit to see if you got it right!</h3>
+                </div>
                 <div className='cards-container'>
+                    <h3>Movies</h3>
                     {this.state.movies.map((movie, index) => {
                         return (
-                            <div draggable onDragStart={(e) => this.onDragStart(e, movie[0])} className='movie' key={index}>
-                                <p>Title: {movie[0]}</p>
+                            <div
+                                draggable={this.state.userSort.includes(movie) ? null : 'true'}
+                                onDragStart={(e) => this.onDragStart(e, movie[0])}
+                                className={this.state.userSort.includes(movie) ? 'movie moved' : 'movie'}
+                                key={index}>
+                                <p>{movie[0]}</p>
+                                {this.state.userSort.includes(movie) ? <i className="far fa-check-circle"></i> : null}
                             </div>
                         )
                     })}
                 </div>
-                <form onSubmit={years.join() == userYears.join() ? this.right : this.wrong} className='user-list' onDragOver={this.onDragOver} onDrop={this.onDrop} >
-                    {this.state.userSort.map((movie, index) => {
-                        return (
-                            <div key={index}>
-                                {movie[0]}
-                            </div>
-                        )
-                    })}
-                    <button type='submit'>Submit</button>
-                    <button onClick={this.reset} type='reset'>Reset</button>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        this.setState({showModal: true})
+                    }}
+                    className='user-list-container'>
+                    <div className='user-list'
+                        onDragOver={this.onDragOver}
+                        onDrop={this.onDrop}>
+                        <div className='dropper'>{this.state.userSort.length > 0 ? null : 'Drop Here'}</div>
+                        {this.state.userSort.map((movie, index) => {
+                            return (
+                                <div
+                                    className='sorted'
+                                    key={index}>
+                                    <p>{this.state.showYears ? `(${movie[1]})` : null} {movie[0]}</p>
+                                    <i className="far fa-times-circle" onClick={() => this.remover(movie)}></i>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <div className='buttons'>
+                        <button type='submit'>Submit</button>
+                        <button onClick={this.reset} type='reset'>Reset</button>
+                        <button onClick={this.show} type='button'>Need Help? Show Years</button>
+                    </div>
                 </form>
             </div>
 

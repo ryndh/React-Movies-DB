@@ -9,7 +9,7 @@ export default class APIFetch extends Component {
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         fetch('http://localhost:5000/return_movies', {
             method: "GET",
             headers: {
@@ -17,25 +17,29 @@ export default class APIFetch extends Component {
                 "content-type": 'application/json'
             }
         })
-        .then(response => {return response.json()})
-        .then(responseData => {return responseData})
-        .then(data => {this.setState({movies:data})})
-        .catch(err => console.log("Fetch Error", err))
+            .then(response => { return response.json() })
+            .then(responseData => { return responseData })
+            .then(data => { this.setState({ movies: data }) })
+            .catch(err => console.log("Fetch Error", err))
     }
 
 
-  render() {
-    return (
-      <div className='movies-container'>
-        {this.state.movies.map((movie, index)=> {
-            return (
-                <div className='movie' key={index}>
-                    <p>Title: {movie[0]}</p>
-                    <p>Year: {movie[1] == 0 ? 'Pending': movie[1]}</p>
+    render() {
+        return (
+            <div className='content'>
+
+                <div className='movies-container'>
+                    {this.state.movies.map((movie, index) => {
+                        return (
+                            <div className='movie' key={index}>
+                                <p>{movie[0]}</p>
+                                <p>Year: {movie[1] == 0 ? 'Pending' : movie[1]}</p>
+                                <p> Entered {movie[2]} time(s) so far.</p>
+                            </div>
+                        )
+                    })}
                 </div>
-            )
-        })}
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }

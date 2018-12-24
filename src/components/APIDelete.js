@@ -31,26 +31,36 @@ export default class APIDelete extends Component {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body:JSON.stringify({title: e.target.deleter.value})
+            body: JSON.stringify({ title: e.target.deleter.value })
         })
-        .then(response => {response.json()})
-        .then(responseData => {return responseData})
-        .catch(err => console.log("Submit Error " + err))
+            .then(response => { return response.json() })
+            .then(responseData => { alert(responseData) })
+            .catch(err => console.log("Submit Error " + err))
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleRemove}>
-                <select name='deleter'>
-                    {this.state.movies.map((movie, index) => {
-                        return(
-                            <option key={index} movietitle={movie[0]} movierating={movie[1]}>{movie[0]}</option>
-                        )
-                    })}
-                </select>
-                <button type='submit'>Delete</button>
-                </form>
+            <div className='content'>
+                <div className='bg-text'>DELETE <br /> MOVIES</div>
+                <div className='bg-icon'>
+
+                </div>
+                <div className='page-content'>
+                    <form className='form' onSubmit={this.handleRemove}>
+                        <div className='select'>
+                            <select name='deleter'>
+                                {this.state.movies.map((movie, index) => {
+                                    return (
+                                        <option key={index} movietitle={movie[0]} movierating={movie[1]}>{movie[0]}</option>
+                                    )
+                                })}
+                            </select>
+                            <i className="far fa-arrow-alt-circle-down"></i>
+                        </div>
+                        <input className='movie-button' type='submit' value='Delete'/>
+                    </form>
+                </div>
             </div>
         );
-    }}
+    }
+}

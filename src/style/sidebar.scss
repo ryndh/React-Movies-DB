@@ -1,0 +1,24 @@
+.sidebar {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: $sidebar-color;
+    border-right: 10px solid $content-bg;
+    .link {
+        text-align: center;
+        width: 75%;
+        margin: 10px 0px;
+        border-radius: 10px;
+        background-color: $nav-link-bg;
+        color: $content-bg;
+        padding: 10px 0px;
+        &:hover {
+            text-decoration: none;
+            color: $sidebar-color;
+        }
+    }
+    
+}
