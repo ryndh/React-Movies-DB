@@ -1,38 +1,30 @@
+@mixin movie {
+    padding: 7px 10px;
+    width: 60%;
+    display: flex;
+    background-color: $sidebar-color;
+    color: $content-bg;
+    justify-content: center;
+    margin: 5px 0px;
+    border-radius: 10px;
+    position: relative;
+}
+@mixin icon {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
 .movies-game {
     width: 100%;
     height: 100%;
     display: grid;
     align-items: baseline;
+    color: $sidebar-color;
     grid-template-columns: [card-s] 2fr [card-e user-s] 2fr [user-e];
     grid-template-rows: [header-s] 10% [header-e game-s] 80% [game-e];
-    .results-modal-hidden {
-        display: none;
-    }
-    .results-modal-show {
-        display: grid;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: #3131317a;
-        z-index: 10;
-        .inner-modal {
-            display: grid;
-            justify-content: center;
-            align-content: center;
-            width: 50%;
-            height: 50%;
-            background-color: white;
-            position: relative;
-            border-radius: 20px;
-            top: 25%;
-            left: 25%;
-            div {
-                font-size: 3rem;
-            }
-        }
-    }
+    @include modal;
     .header {
         grid-column: card-s/user-e;
         grid-row: header-s/header-e;
@@ -46,28 +38,18 @@
         flex-direction: column;
         align-items: center;
         .movie {
-            border: 1px solid;
-            padding: 7px 10px;
-            width: 60%;
-            display: flex;
-            background-color: $sidebar-color;
-            color: $content-bg;
-            justify-content: center;
-            margin: 5px 0px;
-            border-radius: 10px;
-            position: relative;
+            @include movie;
             p {
                 margin: 0;
             }
             .far {
-                position: absolute;
-                right: 0;
-                margin-right: 5px;
-                font-size: 1.5rem;
+              @include icon;
             }
         }
         .moved {
-            background-color: green;
+            background-color: $checked-off;
+            color: $bg-letter-color;
+            // text-decoration: line-through;
         }
     }
     .user-list-container {
@@ -75,6 +57,7 @@
         width: 100%;
         height: 100%;
         border: 5px solid $sidebar-color;
+        color: $sidebar-color;
         border-radius: 15px;
         grid-column: user-s/user-e;
         display: grid;
@@ -93,25 +76,13 @@
             }
         }
         .sorted {
-            border: 1px solid;
-            padding: 7px 10px;
-            width: 60%;
-            display: grid;
-            background-color: $sidebar-color;
-            color: $content-bg;
-            justify-content: center;
-            margin: 5px 0px;
-            border-radius: 10px;
-            position: relative;
+           @include movie;
             p {
                 margin: 0;
             }
             .far {
-                position: absolute;
-                right: 0;
+                @include icon;
                 top: 25%;
-                margin-right: 5px;
-                font-size: 1.5rem;
             }
         }
         .buttons {
@@ -127,6 +98,13 @@
                 border: 2px solid $sidebar-color;
                 background-color: $content-bg;
                 color: $sidebar-color;
+                transition: .3s ease;
+                &:hover {
+                    background-color: $sidebar-color;
+                    color: $content-bg;
+                    transform: scale(1.03) translateY(-2px);
+                    transition: .3s ease;
+                }
             }
         }
     }

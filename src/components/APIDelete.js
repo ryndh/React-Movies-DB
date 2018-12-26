@@ -6,12 +6,13 @@ export default class APIDelete extends Component {
 
         this.state = {
             movies: [],
-            nothing: ''
+            response: '',
+            showModal: false,
         }
     }
 
     componentWillMount() {
-        fetch('http://localhost:5000/return_movies', {
+        fetch('https://python-react-micro.herokuapp.com/return_movies', {
             method: "GET",
             headers: {
                 "accept": "application/json",
@@ -26,7 +27,7 @@ export default class APIDelete extends Component {
 
     handleRemove = (e) => {
         e.preventDefault()
-        fetch('http://localhost:5000/movies_delete', {
+        fetch('https://python-react-micro.herokuapp.com/movies_delete', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,13 +35,26 @@ export default class APIDelete extends Component {
             body: JSON.stringify({ title: e.target.deleter.value })
         })
             .then(response => { return response.json() })
-            .then(responseData => { alert(responseData) })
+            .then(responseData => { this.setState({
+                response: responseData,
+                showModal: true,
+            }) })
             .catch(err => console.log("Submit Error " + err))
+    }
+
+    closeOut = () => {
+        this.setState({showModal: false})
     }
 
     render() {
         return (
             <div className='content'>
+                <div className={this.state.showModal ? 'results-modal-show' : 'results-modal-hidden'} onClick={this.closeOut}>
+                    <div className='inner-modal'>
+                        <div>{this.state.response}</div>
+                        <div className='close'>x</div>
+                    </div>
+                </div>
                 <div className='bg-text'>DELETE <br /> MOVIES</div>
                 <div className='bg-icon'>
 
@@ -57,7 +71,7 @@ export default class APIDelete extends Component {
                             </select>
                             <i className="far fa-arrow-alt-circle-down"></i>
                         </div>
-                        <input className='movie-button' type='submit' value='Delete'/>
+                        <input className='movie-button' type='submit' value='Delete' />
                     </form>
                 </div>
             </div>

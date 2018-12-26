@@ -17,8 +17,8 @@ import './style/main.scss';
 function main() {
   ReactDOM.render(
 
-      <BrowserRouter>
-        <div className='app' > 
+    <BrowserRouter>
+      <div className='app' >
         <div className='sidebar'>
           <Link className='link' to='/'>HOME</Link>
           <Link className='link' to='/movie_add'>Add Movie</Link>
@@ -27,14 +27,14 @@ function main() {
           <Link className='link' to='/movie_game'>Movie Game!</Link>
         </div>
         <div className='content-wrapper'>
-          <Route exact path='/' component={App}/>
-          <Route path='/all_movies' component={APIFetch}/>
-          <Route path='/movie_add' component={APIPost}/>
-          <Route path='/remove' component={APIDelete}/>
-          <Route path='/movie_game' component={MovieSort}/>
+          <Route exact path='/' component={App} />
+          <Route path='/all_movies' component={APIFetch} />
+          <Route path='/movie_add' component={APIPost} />
+          <Route path='/remove' component={APIDelete} />
+          <Route path='/movie_game' component={MovieSort} />
         </div>
-        </div>
-      </BrowserRouter>
+      </div>
+    </BrowserRouter>
 
     , document.querySelector('.app-wrapper'));
 }

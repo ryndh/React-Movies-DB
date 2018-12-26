@@ -1,5 +1,54 @@
-$sidebar-color: #105c93;
-$content-bg: white;
-$nav-link-bg: #3b6694;
-$nav-text-color: black;
-$bg-letter-color: #41403b;
+$sidebar-color: #012D9A;
+$content-bg: #FFFFFF;
+$nav-link-bg: #149CE2;
+$nav-text-color: #012D9A;
+$bg-letter-color: #012D9A;
+$checked-off: #9FBDDF;
+
+$white: #FFFFFF;
+$darkestblue: #00125E;
+$darkblue: #012D9A;
+$seablue: #034FB1;
+$lightblue: #149CE2;
+$bluegray: #9FBDDF;
+
+@mixin modal {
+    .results-modal-hidden {
+        display: none;
+    }
+    .results-modal-show {
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #3131317a;
+        z-index: 10;
+        .inner-modal {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            padding: 20px;
+            text-align: center;
+            width: 50%;
+            height: 50%;
+            background-color: $nav-link-bg;
+            color: $content-bg;
+            position: relative;
+            border-radius: 20px;
+            top: 25%;
+            left: 25%;
+            div {
+                font-size: 3rem;
+            }
+            .close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding-right: 10px;
+                padding-top: 10px;
+            }
+        }
+    }
+}

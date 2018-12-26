@@ -14,7 +14,7 @@ export default class MovieSort extends Component {
     }
 
     componentWillMount() {
-        fetch('http://localhost:5000/return_movies', {
+        fetch('https://python-react-micro.herokuapp.com/return_movies', {
             method: "GET",
             headers: {
                 "accept": "application/json",
@@ -62,7 +62,15 @@ export default class MovieSort extends Component {
     }
     remover = movie => {
         let newUserSort = this.state.userSort.filter((film) => film != movie)
-        this.setState({userSort: newUserSort})
+        let newUserYears = this.state.userYears.filter((year) => year != movie[1])
+        this.setState({
+            userSort: newUserSort,
+            userYears: newUserYears
+        })
+    }
+
+    closeOut = () => {
+        this.setState({showModal: false})
     }
 
     render() {
@@ -76,10 +84,10 @@ export default class MovieSort extends Component {
 
         return (
             <div className='movies-game'>
-                <div className={this.state.showModal ? 'results-modal-show' : 'results-modal-hidden'}>
+                <div className={this.state.showModal ? 'results-modal-show' : 'results-modal-hidden'} onClick={this.closeOut}>
                     <div className='inner-modal'>
                         <div>{years.join() == userYears.join() ? "Correct!" : "Not Quite, Try Again!"}</div>
-                        <button type='button' onClick={() => this.setState({showModal: false})} >Close</button>
+                        <div className='close'>x</div>
                     </div>
                 </div>
                 <div className='header'>
@@ -104,6 +112,7 @@ export default class MovieSort extends Component {
                     onSubmit={(e) => {
                         e.preventDefault()
                         this.setState({showModal: true})
+                        console.log(this.state.userYears)
                     }}
                     className='user-list-container'>
                     <div className='user-list'

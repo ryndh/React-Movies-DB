@@ -10,7 +10,7 @@ export default class APIFetch extends Component {
     }
 
     componentWillMount() {
-        fetch('http://localhost:5000/return_movies', {
+        fetch('https://python-react-micro.herokuapp.com/return_movies', {
             method: "GET",
             headers: {
                 "accept": "application/json",
@@ -34,7 +34,7 @@ export default class APIFetch extends Component {
                             <div className='movie' key={index}>
                                 <p>{movie[0]}</p>
                                 <p>Year: {movie[1] == 0 ? 'Pending' : movie[1]}</p>
-                                <p> Entered {movie[2]} time(s) so far.</p>
+                                <p className='stats'> Entered {movie[2]} time(s) so far.</p>
                             </div>
                         )
                     })}
