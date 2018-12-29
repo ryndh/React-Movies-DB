@@ -10,7 +10,7 @@ export default class APIFetch extends Component {
     }
 
     componentWillMount() {
-        fetch('https://localhost:5000', {
+        fetch('https://python-react-micro.herokuapp.com/return_movies', {
             method: "GET",
             headers: {
                 "accept": "application/json",
