@@ -1,3 +1,32 @@
+@keyframes blinker {
+    0% {
+        opacity: .1;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .1;
+    }
+}
+
+
+.content {
+    .waiting {
+        font-size: 5rem;
+        font-style: italic;
+    }
+    .dotOne {
+        animation: blinker 1s ease 0s infinite;
+    }
+    .dotTwo {
+        animation: blinker 1s ease .2s infinite;
+    }
+    .dotThree {
+        animation: blinker 1s ease .4s infinite;
+    }
+}
+
 .movies-container {
     display: grid;
     grid-gap: 20px 40px;

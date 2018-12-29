@@ -59,7 +59,7 @@ export default class APIPost extends Component {
                 <div className='page-content'>
                     <form className='form' onSubmit={this.handleSubmit}>
                         <label className='movie-label'>Title:
-                            <input autocomplete='off' className='movie-input' type='text' value={this.state.title} onChange={this.handleChange} name='title' />
+                            <input autoComplete='off' className='movie-input' type='text' value={this.state.title} onChange={this.handleChange} name='title' />
                         </label>
 
                         <input className='movie-button' type='submit' value='Submit Movie' />

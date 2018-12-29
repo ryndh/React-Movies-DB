@@ -65,7 +65,7 @@ export default class APIDelete extends Component {
                             <select name='deleter'>
                                 {this.state.movies.map((movie, index) => {
                                     return (
-                                        <option key={index} movietitle={movie[0]} movierating={movie[1]}>{movie[0]}</option>
+                                        <option key={index} movietitle={movie[0]}>{movie[0]}</option>
                                     )
                                 })}
                             </select>

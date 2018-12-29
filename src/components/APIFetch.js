@@ -10,7 +10,7 @@ export default class APIFetch extends Component {
     }
 
     componentWillMount() {
-        fetch('https://python-react-micro.herokuapp.com/return_movies', {
+        fetch('https://localhost:5000', {
             method: "GET",
             headers: {
                 "accept": "application/json",
@@ -25,9 +25,10 @@ export default class APIFetch extends Component {
 
 
     render() {
+        console.log(this.state.movies)
         return (
             <div className='content'>
-
+                {this.state.movies.length == 0 ? <div className='waiting'>Wait for it<span className='dotOne'>.</span><span className='dotTwo'>.</span><span className='dotThree'>.</span></div> : null}
                 <div className='movies-container'>
                     {this.state.movies.map((movie, index) => {
                         return (
