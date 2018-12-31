@@ -16,7 +16,7 @@ export default class App extends Component {
           <Link className='component' to='/movie_add'>Add Movie to Database</Link>
           <Link className='component' to='/movie_game'>Test your movie knowledge! Play a game using movies in the DB</Link>
           <a className='component' target='_blank' href='https://python-react-micro.herokuapp.com/return_movies'>
-            <div>Back End JSON</div>
+            <div>Back End DB JSON</div>
           </a>
         </div>
       </div>

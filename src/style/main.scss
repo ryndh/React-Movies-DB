@@ -7,7 +7,7 @@
 
 html {
     font-size: 70%; // 1rem is 10px
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .app {
@@ -15,12 +15,18 @@ html {
     grid-template-columns: 20% 80%;
     justify-items: center;
     overflow:hidden;
+    @include phone {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr;
+    }
     .content-wrapper {
         background-color: $content-bg;
         border-left: 10px solid $nav-link-bg;
         width: 100%;
         padding: 25px;
-        // position: relative;
+        @include phone {
+            border-left: none;
+        }
         .content {
             display: flex;
             @include modal;
@@ -35,7 +41,9 @@ html {
                 writing-mode: vertical-rl;
                 right: 0;
                 top: 5%;
-
+                @include phone {
+                    top: 15%;
+                }
             }
        
             

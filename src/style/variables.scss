@@ -1,7 +1,7 @@
 $sidebar-color: #012D9A;
 $content-bg: #FFFFFF;
 $nav-link-bg: #149CE2;
-$nav-text-color: #012D9A;
+$nav-text-color: #FFFFFF;
 $bg-letter-color: #012D9A;
 $checked-off: #9FBDDF;
 
@@ -11,6 +11,12 @@ $darkblue: #012D9A;
 $seablue: #034FB1;
 $lightblue: #149CE2;
 $bluegray: #9FBDDF;
+
+@mixin phone {
+    @media (max-width: 700px) {
+        @content;
+    }
+}
 
 @mixin modal {
     .results-modal-hidden {

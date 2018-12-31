@@ -10,6 +10,10 @@
         grid-gap: 30px 0px;
         justify-items: center;
         align-content: center;
+        @include phone {
+            grid-template-columns: 1fr;
+            grid-gap: 15px 0px;
+        }
         .component {
             padding: 25px;
             text-align: center;
@@ -24,6 +28,10 @@
             width: 25vw;
             height: 25vw;
             transition: .3s ease-in-out;
+            @include phone {
+                width: 45vw;
+                height: 45vw;
+            }
             &:hover {
                 background-color: $sidebar-color;
                 color: $content-bg;

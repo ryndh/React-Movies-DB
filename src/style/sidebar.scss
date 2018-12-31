@@ -7,6 +7,13 @@
     height: 100vh;
     background-color: $sidebar-color;
     border-right: 10px solid $content-bg;
+    @include phone {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        padding-top: 0px;
+        border-right: none;
+    }
     .link {
         text-align: center;
         width: 75%;
@@ -16,11 +23,18 @@
         color: $content-bg;
         padding: 10px 0px;
         transition: .3s ease;
+        @include phone {
+            width: 100%;
+            margin: 0px 7px;
+        }
         &:hover {
             text-decoration: none;
             // color: $sidebar-color;
             transform: translateX(10px) scale(1.05);
             transition: .3s ease;
+            @include phone {
+                transform: translateY(5px) scale(1.05);
+            }
         }
     }
     

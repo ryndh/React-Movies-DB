@@ -8,6 +8,10 @@
     margin: 5px 0px;
     border-radius: 10px;
     position: relative;
+    text-align: center;
+    @include phone {
+        width: 80%;
+    }
 }
 @mixin icon {
     position: absolute;
@@ -25,6 +29,10 @@
     grid-template-columns: [card-s] 2fr [card-e user-s] 2fr [user-e];
     grid-template-rows: [header-s] 10% [header-e game-s] 80% [game-e];
     @include modal;
+    @include phone {
+        grid-template-rows: [header-s] 20% [header-e game-s] 80% [game-e];
+        height: 100vh;
+    }
     .header {
         grid-column: card-s/user-e;
         grid-row: header-s/header-e;
@@ -64,6 +72,9 @@
         align-items: center;
         justify-items: center;
         grid-template-rows: [list-s] 90%[list-e button-s] 10% [button-e];
+        @include phone {
+            height: 80%;
+        }
         .user-list {
             height: 100%;
             width: 100%;
@@ -90,6 +101,18 @@
             width: 100%;
             display: flex;
             justify-content: space-around;
+            @include phone {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-items: center;
+                align-items: center;
+                :nth-child(1) {
+                    border: none;
+                }
+                :nth-child(3) {
+                    border: none;
+                }
+            }
             button {
                 width: 30%;
                 border-radius: 10px;
@@ -99,11 +122,24 @@
                 background-color: $content-bg;
                 color: $sidebar-color;
                 transition: .3s ease;
+                @include phone {
+                    border: none;
+                    border-radius: 0px;
+                    border-right: 1px solid;
+                    border-left: 1px solid;
+                    width: 100%;
+                    height: 100%;
+                }
                 &:hover {
                     background-color: $sidebar-color;
+                    border-radius: 10px;
                     color: $content-bg;
                     transform: scale(1.03) translateY(-2px);
                     transition: .3s ease;
+                    @include phone {
+                        transform: none;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
