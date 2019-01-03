@@ -1,16 +1,33 @@
-$sidebar-color: #012D9A;
+//Colors
+//Homepage
+$sidebar-color: #020102;
 $content-bg: #FFFFFF;
-$nav-link-bg: #149CE2;
+$nav-link-bg: #1d587c;
 $nav-text-color: #FFFFFF;
-$bg-letter-color: #012D9A;
-$checked-off: #9FBDDF;
+$bg-letter-color: #FFFFFF;
+$home-circles: #1d587c;
+$circle-bg: #1d587c;
+$circle-text: #FFFFFF;
 
-$white: #FFFFFF;
-$darkestblue: #00125E;
-$darkblue: #012D9A;
-$seablue: #034FB1;
-$lightblue: #149CE2;
-$bluegray: #9FBDDF;
+//Game Colors
+$checked-off: #9FBDDF;
+$game-element: #1d587c;
+$button-bg-color: #FFFFFF;
+$button-border-color: #FFFFFF;
+$game-container-border: #1d587c;
+$game-header-color: #FFFFFF;
+$game-header-bg-color: #020102;
+$container-bg-color: #1d587ca4;
+
+//Display Movies
+$movie-stats-color: #020102;
+$movie-card-color: #1d587c;
+
+
+
+//Other Styles
+$page-padding: 25px;
+
 
 @mixin phone {
     @media (max-width: 700px) {

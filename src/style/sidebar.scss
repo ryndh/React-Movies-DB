@@ -6,7 +6,7 @@
     align-items: center;
     height: 100vh;
     background-color: $sidebar-color;
-    border-right: 10px solid $content-bg;
+    // border-right: 10px solid $content-bg;
     @include phone {
         display: flex;
         flex-direction: row;

@@ -94,7 +94,7 @@ export default class MovieSort extends Component {
                     <h3>How well do you know your movies? <br /> Drag from the left column to the right to sort by release date, then hit submit to see if you got it right!</h3>
                 </div>
                 <div className='cards-container'>
-                    <h3>Movies</h3>
+                    <h3 className='cards-container-heading'>Movies</h3>
                     {this.state.movies.map((movie, index) => {
                         return (
                             <div

@@ -1,8 +1,8 @@
 @mixin movie {
-    padding: 7px 10px;
+    padding: 10px 10px;
     width: 60%;
     display: flex;
-    background-color: $sidebar-color;
+    background-color: $game-element;
     color: $content-bg;
     justify-content: center;
     margin: 5px 0px;
@@ -24,20 +24,24 @@
     width: 100%;
     height: 100%;
     display: grid;
-    align-items: baseline;
+    // align-items: baseline;
     color: $sidebar-color;
+    padding: $page-padding;
     grid-template-columns: [card-s] 2fr [card-e user-s] 2fr [user-e];
-    grid-template-rows: [header-s] 10% [header-e game-s] 80% [game-e];
+    grid-template-rows: [header-s] 15% [header-e game-s] 80% [game-e];
     @include modal;
     @include phone {
         grid-template-rows: [header-s] 20% [header-e game-s] 80% [game-e];
         height: 100vh;
     }
     .header {
+        color: $game-header-color;
         grid-column: card-s/user-e;
         grid-row: header-s/header-e;
         text-align: center;
-        margin-bottom: 50px;
+        background-color: $game-header-bg-color;
+        border-radius: 10px;
+        padding: 16px;
     }
     .cards-container {
         grid-column: card-s/card-e;
@@ -45,6 +49,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $game-header-color;
+        height: 100%;
+        .cards-container-heading {
+            margin-top: 30px;
+            background-color: $game-header-bg-color;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
         .movie {
             @include movie;
             p {
@@ -64,8 +76,9 @@
         padding: 20px 0px;
         width: 100%;
         height: 100%;
-        border: 5px solid $sidebar-color;
-        color: $sidebar-color;
+        border: 10px solid $game-container-border;
+        color: $game-header-color;
+        background-color: $container-bg-color;
         border-radius: 15px;
         grid-column: user-s/user-e;
         display: grid;
@@ -118,8 +131,8 @@
                 border-radius: 10px;
                 border-style: none;
                 outline: none;
-                border: 2px solid $sidebar-color;
-                background-color: $content-bg;
+                border: 2px solid $button-border-color;
+                background-color: $button-bg-color;
                 color: $sidebar-color;
                 transition: .3s ease;
                 @include phone {

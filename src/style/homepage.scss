@@ -19,10 +19,11 @@
             text-align: center;
             text-decoration: none;
             display: grid;
-            color: $sidebar-color;
+            color: $circle-text;
             justify-items: center;
             align-content: center;
-            border: 3px solid $sidebar-color;
+            border: 3px solid $home-circles;
+            background-color: $circle-bg;
             font-size: 1.5rem;
             border-radius: 50%;
             width: 25vw;
@@ -33,7 +34,7 @@
                 height: 45vw;
             }
             &:hover {
-                background-color: $sidebar-color;
+                background-color: $circle-bg;
                 color: $content-bg;
                 transform: scale(1.1);
                 transition: .3s ease-in-out;

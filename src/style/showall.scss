@@ -32,6 +32,7 @@
     grid-gap: 20px 40px;
     grid-auto-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
+    padding: $page-padding;
     @include phone {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -42,7 +43,7 @@
         font-size: 1.1rem;
         text-align: center;
         align-items: center;
-        background-color: $sidebar-color;
+        background-color: $movie-card-color;
         color: $content-bg;
         padding: 20px;
         border-radius: 10px;
@@ -51,7 +52,7 @@
             margin: 0px;
         }
         .stats {
-            color: $nav-link-bg;
+            color: $movie-stats-color;
             font-weight: 700;
         }
     }
