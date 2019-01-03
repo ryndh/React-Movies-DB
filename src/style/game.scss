@@ -38,10 +38,14 @@
         color: $game-header-color;
         grid-column: card-s/user-e;
         grid-row: header-s/header-e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
         background-color: $game-header-bg-color;
         border-radius: 10px;
         padding: 16px;
+        margin: 15px;
     }
     .cards-container {
         grid-column: card-s/card-e;
