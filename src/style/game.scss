@@ -3,6 +3,7 @@
     width: 60%;
     display: flex;
     background-color: $game-element;
+    color: $content-bg;
     justify-content: center;
     margin: 5px 0px;
     border-radius: 10px;
@@ -62,7 +63,6 @@
         }
         .movie {
             @include movie;
-            color: $content-bg;
             p {
                 margin: 0;
             }
@@ -105,7 +105,7 @@
         }
         .sorted {
            @include movie;
-           color: $checked-off;
+           background-color: $checked-off;
             p {
                 margin: 0;
             }
