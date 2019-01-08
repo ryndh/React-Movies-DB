@@ -105,6 +105,7 @@
         }
         .sorted {
            @include movie;
+           color: $checked-off;
             p {
                 margin: 0;
             }
