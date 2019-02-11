@@ -15,6 +15,10 @@
     .waiting {
         font-size: 5rem;
         font-style: italic;
+        color: white;
+    }
+    .empty-list {
+        font-size: 3rem;
     }
     .dotOne {
         animation: blinker 1s ease 0s infinite;

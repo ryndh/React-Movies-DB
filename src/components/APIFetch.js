@@ -28,7 +28,7 @@ export default class APIFetch extends Component {
         console.log(this.state.movies)
         return (
             <div className='content'>
-                {this.state.movies.length == 0 ? <div className='waiting'>Loading Movies (Or there aren't any in the db) <span className='dotOne'>.</span><span className='dotTwo'>.</span><span className='dotThree'>.</span></div> : null}
+                {this.state.movies.length == 0 ? <div className='waiting'>Loading Movies <span className='dotOne'>.</span><span className='dotTwo'>.</span><span className='dotThree'>.</span><br></br><span className='empty-list'>(Or there aren't any in the database)</span></div> : null}
                 <div className='movies-container'>
                     {this.state.movies.map((movie, index) => {
                         return (
