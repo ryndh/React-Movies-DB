@@ -12,7 +12,7 @@ html {
 
 .app {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: max-content auto;
     justify-items: center;
     overflow:hidden;
     
@@ -21,11 +21,7 @@ html {
         grid-template-rows: 70px 1fr;
     }
     .content-wrapper {
-        // background-size: cover;
-        // background-color: $content-bg;
-        // border-left: 10px solid $nav-link-bg;
         width: 100%;
-        // padding: 25px;
         @include phone {
             border-left: none;
         }
@@ -36,7 +32,7 @@ html {
             position: absolute;
             top: 0;
             left: 0;
-            // opacity: .9;
+            opacity: .7;
             z-index: -2;
             display: block;
             background-image: url(../../static/assets/movie.jpg);
@@ -65,8 +61,6 @@ html {
                     top: 15%;
                 }
             }
-       
-            
         }
     }
 }

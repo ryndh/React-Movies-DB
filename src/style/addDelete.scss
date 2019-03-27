@@ -33,7 +33,7 @@
                     z-index: -1;
                 }
                 select {
-                    color: $sidebar-color;
+                    color: $add-del-text-color;
                     padding: 5px 50px;
                     width: 100%;
                     min-width: 500px;
@@ -70,7 +70,7 @@
                 border-radius: 10px;
                 background-color: $sidebar-color;
                 border-style: none;
-                color: $content-bg;
+                color: $add-del-text-color;
                 width: 50%;
                 transition: 2s ease;
                 @include phone {

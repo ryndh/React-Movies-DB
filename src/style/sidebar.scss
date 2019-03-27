@@ -1,5 +1,23 @@
+@keyframes flipMe {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes flipMeTwo {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .sidebar {
-    width: 100%;
+    transition: 2s ease;
+    width: 5vw;
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -37,5 +55,30 @@
             }
         }
     }
+    .reveal-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .fas {
+            color: $show-hide-color;
+            font-size: 2rem;
+        }
+        .flipped {
+            transition: 1.5s ease;
+            transform: rotate3d(0,1,0, 540deg)
+        }
+        .reverse {
+            transition: 1.5s ease;
+            transform: rotate3d(0,1,0, 0deg)
+        }
+        h3 {
+            color: $show-hide-color;
+        }
+    }
     
+}
+
+.opened {
+    transition: 2s ease;
+    width: 20vw;
 }

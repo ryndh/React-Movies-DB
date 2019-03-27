@@ -11,7 +11,9 @@
 }
 
 
-.content {
+.content-showall {
+    display: flex;
+    justify-content: center;
     .waiting {
         font-size: 5rem;
         font-style: italic;

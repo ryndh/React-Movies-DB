@@ -7,6 +7,7 @@ import APIFetch from './components/APIFetch';
 import APIPost from './components/APIPost';
 import APIDelete from './components/APIDelete';
 import MovieSort from './components/MovieSort';
+import Sidebar from './components/Sidebar'
 
 
 
@@ -19,13 +20,7 @@ function main() {
 
     <BrowserRouter>
       <div className='app' >
-        <div className='sidebar'>
-          <Link className='link' to='/'>HOME</Link>
-          <Link className='link' to='/movie_add'>Add Movie</Link>
-          <Link className='link' to='/all_movies'>Movie List</Link>
-          <Link className='link' to='/remove'>Delete Movies</Link>
-          <Link className='link' to='/movie_game'>Movie Game!</Link>
-        </div>
+          <Sidebar />
         <div className='content-wrapper'>
           <Route exact path='/' component={App} />
           <Route path='/all_movies' component={APIFetch} />

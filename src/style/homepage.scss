@@ -2,14 +2,18 @@
 .home {
     .app-heading {
         color: $sidebar-color;
+        text-align: right;
+        padding-right: 5vw;
+        font-size: 4rem;
     }
     .home-grid {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: [column-s]1fr [column-m] 1fr[column-e];
         grid-gap: 30px 0px;
         justify-items: center;
         align-content: center;
+        height: 80vh;
         @include phone {
             grid-template-columns: 1fr;
             grid-gap: 15px 0px;
@@ -25,9 +29,9 @@
             border: 3px solid $home-circles;
             background-color: $circle-bg;
             font-size: 1.5rem;
-            border-radius: 50%;
+            border-radius: 20px;
             width: 25vw;
-            height: 25vw;
+            height: 15vw;
             transition: .3s ease-in-out;
             @include phone {
                 width: 45vw;
@@ -39,6 +43,12 @@
                 transform: scale(1.1);
                 transition: .3s ease-in-out;
             }
+        }
+        .two {
+            grid-column: column-s/column-e            
+        }
+        .three {
+            grid-column: column-m/column-e
         }
     }
 }

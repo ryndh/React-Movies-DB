@@ -1,6 +1,7 @@
 //Colors
 //Homepage
-$sidebar-color: #020102;
+$sidebar-color: #f8f9fa;
+$show-hide-color: #020102;
 $content-bg: #FFFFFF;
 $nav-link-bg: #1d587c;
 $nav-text-color: #FFFFFF;
@@ -10,14 +11,18 @@ $circle-bg: #1d587c;
 $circle-text: #FFFFFF;
 
 //Game Colors
-$checked-off: #9FBDDF;
+$checked-off: #5883b4;
 $game-element: #1d587c;
-$button-bg-color: #FFFFFF;
-$button-border-color: #FFFFFF;
+$button-bg-color: #1d587c;
+$button-border-color: #f8f9fa;
 $game-container-border: #1d587c;
-$game-header-color: #FFFFFF;
-$game-header-bg-color: #020102;
-$container-bg-color: #1d587ca4;
+$game-header-color: #1d587c;
+$game-header-bg-color: #f8f9fa;
+$container-bg-color: #f8f9fa;
+$button-color: #f8f9fa;
+
+//Add Delete
+$add-del-text-color: #020102;
 
 //Display Movies
 $movie-stats-color: #020102;

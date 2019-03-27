@@ -6,18 +6,17 @@ export default class App extends Component {
     super(props)
   }
 
+  clickhandler = () => console.log('Hey')
+
   render() {
     return (
 
       <div className='home'>
-        <h1 className='app-heading'>Movies App</h1>
+        <h1 className='app-heading' onClick={this.clickhandler}>Movies App</h1>
         <div className='home-grid'>
           <Link className='component' to='/all_movies'>View Current Movies in DB</Link>
-          <Link className='component' to='/movie_add'>Add Movie to Database</Link>
-          <Link className='component' to='/movie_game'>Test your movie knowledge! Play a game using movies in the DB</Link>
-          <a className='component' target='_blank' href='https://python-react-micro.herokuapp.com/return_movies'>
-            <div>Back End DB JSON</div>
-          </a>
+          <Link className='component two' to='/movie_add'>Add Movie to Database</Link>
+          <Link className='component three' to='/movie_game'>Test your movie memory!</Link>
         </div>
       </div>
 
