@@ -1,7 +1,7 @@
 
 .home {
     .app-heading {
-        // color: $app-heading-color;
+        color: $app-heading-text-color;
         text-align: right;
         padding-right: 5vw;
         font-size: 4rem;
@@ -17,6 +17,7 @@
         @include phone {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         .component {
             padding: 25px;
@@ -34,8 +35,9 @@
             height: 15vw;
             transition: .3s ease-in-out;
             @include phone {
-                width: 45vw;
-                height: 45vw;
+                width: 55vw;
+                height: 35vw;
+                margin-bottom: 25px;
             }
             &:hover {
                 background-color: $circle-bg;
