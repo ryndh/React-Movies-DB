@@ -1,32 +1,42 @@
 //Colors
 //Homepage
-$sidebar-color: #f8f9fa;
-$show-hide-color: #020102;
 $content-bg: #FFFFFF;
-$nav-link-bg: #1d587c;
-$nav-text-color: #FFFFFF;
-$bg-letter-color: #FFFFFF;
 $home-circles: #1d587c;
-$circle-bg: #1d587c;
-$circle-text: #FFFFFF;
+$circle-bg: #f8f9fa;
+$circle-text: #be785e;
+
+//Sidebar
+$sidebar-link-bg: #be785e;
+$show-hide-color: #020102;
+$bg-letter-color: #FFFFFF;
+$sidebar-bg-color: #f8f9fa;
+$sidebar-link-text-color: #FFFFFF;
+
+//Modal
+$modal-bg: #FFFFFF;
 
 //Game Colors
 $checked-off: #5883b4;
-$game-element: #1d587c;
+$game-element: #f8f9fa;
+$movie-game-text-color: #be785e;
+$movie-game-text-color-moved: #f8f9fa;
 $button-bg-color: #1d587c;
 $button-border-color: #f8f9fa;
 $game-container-border: #1d587c;
-$game-header-color: #1d587c;
+$game-header-color: #be785e;
 $game-header-bg-color: #f8f9fa;
 $container-bg-color: #f8f9fa;
 $button-color: #f8f9fa;
 
 //Add Delete
-$add-del-text-color: #020102;
+$add-del-text-color: #f8f9fa;
+$movie-button-color: #020102;
+$select-border-color: #f8f9fa;
 
 //Display Movies
 $movie-stats-color: #020102;
-$movie-card-color: #1d587c;
+$movie-card-color: #f8f9fa;
+$movie-text-color: #be785e;
 
 
 
@@ -61,8 +71,8 @@ $page-padding: 25px;
             text-align: center;
             width: 50%;
             height: 50%;
-            background-color: $nav-link-bg;
-            color: $content-bg;
+            background-color: $sidebar-link-bg;
+            color: $modal-bg;
             position: relative;
             border-radius: 20px;
             top: 25%;

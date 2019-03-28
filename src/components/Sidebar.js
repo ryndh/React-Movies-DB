@@ -9,7 +9,9 @@ export default class Sidebar extends Component {
       sidebarShown: false,
     }
   }
-
+  resetter = () => {
+    this.setState({sidebarShown: false})
+  }
   render() {
     return (
 
@@ -24,11 +26,11 @@ export default class Sidebar extends Component {
           <h3>{this.state.sidebarShown ? 'Hide' : 'Show'}</h3>
           <i className={`fas fa-arrow-circle-right ${this.state.sidebarShown ? 'flipped' : 'reverse'}`}></i>
         </div>
-        {this.state.sidebarShown ? <Link className='link' to='/'>HOME</Link> : null}
-        {this.state.sidebarShown ? <Link className='link' to='/movie_add'>Add Movie</Link> : null}
-        {this.state.sidebarShown ? <Link className='link' to='/all_movies'>Movie List</Link> : null}
-        {this.state.sidebarShown ? <Link className='link' to='/remove'>Delete Movies</Link> : null}
-        {this.state.sidebarShown ? <Link className='link' to='/movie_game'>Game</Link> : null}
+        {this.state.sidebarShown ? <Link className='link' onClick={this.resetter} to='/'>HOME</Link> : null}
+        {this.state.sidebarShown ? <Link className='link' onClick={this.resetter} to='/movie_add'>Add Movie</Link> : null}
+        {this.state.sidebarShown ? <Link className='link' onClick={this.resetter} to='/all_movies'>Movie List</Link> : null}
+        {this.state.sidebarShown ? <Link className='link' onClick={this.resetter} to='/remove'>Delete Movies</Link> : null}
+        {this.state.sidebarShown ? <Link className='link' onClick={this.resetter} to='/movie_game'>Game</Link> : null}
       </div>
 
     );

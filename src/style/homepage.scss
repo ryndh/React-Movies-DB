@@ -1,7 +1,7 @@
 
 .home {
     .app-heading {
-        color: $sidebar-color;
+        // color: $app-heading-color;
         text-align: right;
         padding-right: 5vw;
         font-size: 4rem;
@@ -15,8 +15,8 @@
         align-content: center;
         height: 80vh;
         @include phone {
-            grid-template-columns: 1fr;
-            grid-gap: 15px 0px;
+            display: flex;
+            flex-direction: column;
         }
         .component {
             padding: 25px;
@@ -26,7 +26,7 @@
             color: $circle-text;
             justify-items: center;
             align-content: center;
-            border: 3px solid $home-circles;
+            // border: 3px solid $home-circles;
             background-color: $circle-bg;
             font-size: 1.5rem;
             border-radius: 20px;
@@ -39,7 +39,7 @@
             }
             &:hover {
                 background-color: $circle-bg;
-                color: $content-bg;
+                // color: $content-bg;
                 transform: scale(1.1);
                 transition: .3s ease-in-out;
             }

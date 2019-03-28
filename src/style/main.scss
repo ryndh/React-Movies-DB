@@ -22,6 +22,8 @@ html {
     }
     .content-wrapper {
         width: 100%;
+        overflow: hidden;
+
         @include phone {
             border-left: none;
         }
@@ -32,10 +34,10 @@ html {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: .7;
+            // opacity: .7;
             z-index: -2;
             display: block;
-            background-image: url(../../static/assets/movie.jpg);
+            background-image: url(../../static/assets/reels.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -59,6 +61,7 @@ html {
                 top: 5%;
                 @include phone {
                     top: 15%;
+                    opacity: .7;
                 }
             }
         }

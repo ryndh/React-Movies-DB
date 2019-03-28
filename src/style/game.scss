@@ -3,7 +3,7 @@
     width: 60%;
     display: flex;
     background-color: $game-element;
-    color: $content-bg;
+    color: $movie-game-text-color;
     justify-content: center;
     margin: 5px 0px;
     border-radius: 10px;
@@ -25,10 +25,11 @@
     height: 100%;
     display: grid;
     // align-items: baseline;
-    color: $sidebar-color;
+    color: $sidebar-bg-color;
     padding: $page-padding;
     grid-template-columns: [card-s] 2fr [card-e user-s] 2fr [user-e];
     grid-template-rows: [header-s] 15% [header-e game-s] 80% [game-e];
+    overflow: hidden;
     @include modal;
     @include phone {
         grid-template-rows: [header-s] 20% [header-e game-s] 80% [game-e];
@@ -106,6 +107,7 @@
         .sorted {
            @include movie;
            background-color: $checked-off;
+           color: $movie-game-text-color-moved;
             p {
                 margin: 0;
             }
@@ -149,7 +151,7 @@
                     height: 100%;
                 }
                 &:hover {
-                    background-color: $sidebar-color;
+                    background-color: $sidebar-bg-color;
                     border-radius: 10px;
                     color: $content-bg;
                     transform: scale(1.03) translateY(-2px);
